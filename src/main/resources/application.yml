@@ -1,0 +1,19 @@
+server:
+  port: 4003
+
+#指定当前eureka客户端的注册地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:4001/eureka
+    # register-with-eureka: false  #自身不向eureka注册
+    #fetch-registry: false #启动时禁止client的注册
+  instance:
+    hostname: localhost
+
+
+
+#指定应用名称
+spring:
+  application:
+    name: ribbon-client
